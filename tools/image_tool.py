@@ -34,6 +34,13 @@ def show_cv_image(image):
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
+def img2npimage(image):
+    # 创建一个BytesIO对象，用于存储图片的二进制数据
+    binary_data = io.BytesIO()
+    image.save(binary_data,  format="PNG")
+    # 获取二进制数据
+    binary_data = binary_data.getvalue()
+    return bytes2npimage(binary_data)
 
 def bytes2npimage(image_bytes: bytes):
     """
@@ -47,6 +54,7 @@ def bytes2npimage(image_bytes: bytes):
     # 注意第二个参数是颜色通道，对于大多数图像，它是3（代表RGB）
     image_array = cv2.imdecode(np.frombuffer(image_bytes_io.read(), np.uint8), cv2.IMREAD_COLOR)
     image_array = cv2.cvtColor(image_array, cv2.COLOR_BGR2RGB)
+
     return image_array
 
 
