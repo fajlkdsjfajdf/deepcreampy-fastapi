@@ -1,0 +1,10 @@
+pillow
+fastapi
+opencv-python
+tensorflow==2.10
+scipy
+scikit-image
+onnxruntime-gpu
+python-multipart
+uvicorn
+torch
