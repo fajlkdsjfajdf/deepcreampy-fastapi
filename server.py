@@ -43,7 +43,7 @@ async def route_mosaic_rcnn(image: bytes = File()) -> Response:
     return send_image(result)
 
 
-@app.post("/deepcreampy-bar-rcnn-esrgan", summary="修复一个带有马赛克的图片(自动识别涂抹并放大)",
+@app.post("/deepcreampy-mosaic-rcnn-esrgan", summary="修复一个带有马赛克的图片(自动识别涂抹并放大)",
           description="使用Mask_RCNN 自动识别马赛克区域并涂抹, 另外由于马赛克区域仍保留原图的形状信息, 用esrgan超分马赛克区域也许可以获得比较好的效果")
 async def route_mosaic_rcnn_esrgan(image: bytes = File()) -> Response:
     org = Image.open(io.BytesIO(image))
