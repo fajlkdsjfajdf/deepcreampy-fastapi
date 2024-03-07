@@ -39,7 +39,7 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 <a href="https://github.com/natethegreate/hent-AI">hent-AI</a>
 
 在# The Model 中找到对应步长的模型下载地址
-下载完成后, 将其命名为"weights.h5" 放入 models/mrcnn 文件下
+下载完成后, 将其命名为"weights.h5" 放入 models/mrcnn 文件下 ,最新版本为Model 268。
 
 # 模型说明
 esrgan模型, 该模型用于在马赛克修复时缩放整张图片, 用以提取马赛克位置的基本形状, 强化deepcreampy 的效果, 你可以在 openmodeldb.info 中下载到 Twittman 训练的对应的esrgan模型
