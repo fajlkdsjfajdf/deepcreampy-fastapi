@@ -22,11 +22,29 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 注意, 由于tenserflow>2.10 的版本在windows 中不再支持GPU加速, 所以requirements.txt 设置了最大版本为2.10, 如果是使用cpu或者再linux上运行,可以放开tenserflow版本限制。
 
-安装完成依赖, 我们需要一些额外的模型来完成安装
+安装完成依赖, 我们需要2个额外的模型来完成安装
 
+模型下载地址
+<a href="https://openmodeldb.info/models/4x-Fatal-Pixels">4x-Fatal-Pixels.pth</a>
+<a href="https://github.com/natethegreate/hent-AI">hent-AI</a>
+
+# 1
 esrgan模型, 该模型用于在马赛克修复时缩放整张图片, 用以提取马赛克位置的基本形状, 强化deepcreampy 的效果, 你可以在 openmodeldb.info 中下载到 Twittman 训练的对应的esrgan模型
 下载完成后, 将其命名为"4x-Fatal-Pixels.pth" 放入 models/esrgan 文件下
 <a href="https://openmodeldb.info/models/4x-Fatal-Pixels">4x-Fatal-Pixels.pth</a>
-
+# 2
 mask-r-cnn模型， Mask R-CNN 是一个实例分割（Instance segmentation）模型, 在这里，我们用其来搜索马赛克区域。
+下载完成后, 将其命名为"weights.h5" 放入 models/mrcnn 文件下
 你可以在 <a href="https://github.com/natethegreate/hent-AI">hent-AI</a> 的 # The Model 中找到对应步长的模型下载地址。
+
+# 启动
+完成安装后, 你可以直接使用 
+```python copy
+python server.py
+```
+来启动, 稍等片刻, 启动完成后, 即可在 
+```html copy
+http://localhost:8001
+```
+中查看所有接口
+
