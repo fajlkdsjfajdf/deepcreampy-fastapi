@@ -27,6 +27,7 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 安装完成依赖, 我们需要2个额外的模型来完成安装
 
 模型下载地址
+
 <a href="https://openmodeldb.info/models/4x-Fatal-Pixels">4x-Fatal-Pixels.pth</a>
 
 下载完成后, 将其命名为"4x-Fatal-Pixels.pth" 放入 models/esrgan 文件下
