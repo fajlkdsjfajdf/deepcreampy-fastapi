@@ -41,10 +41,12 @@ def bytes2npimage(image_bytes: bytes):
     :param image_bytes:
     :return:
     """
-    image = Image.open(io.BytesIO(image_bytes))
-    # 将图像转换为NumPy数组
-    image_array = np.array(image)
 
+    image_bytes_io = io.BytesIO(image_bytes)
+    # 读取字节流中的数据，并将其解码为图像
+    # 注意第二个参数是颜色通道，对于大多数图像，它是3（代表RGB）
+    image_array = cv2.imdecode(np.frombuffer(image_bytes_io.read(), np.uint8), cv2.IMREAD_COLOR)
+    image_array = cv2.cvtColor(image_array, cv2.COLOR_BGR2RGB)
     return image_array
 
 
@@ -54,8 +56,12 @@ def bytes2cvimage(image_bytes: bytes):
     :param image_bytes:
     :return:
     """
-    image_array = bytes2npimage(image_bytes)
-    return cv2.cvtColor(image_array, cv2.COLOR_RGB2BGR)
+    image_bytes_io = io.BytesIO(image_bytes)
+    # 读取字节流中的数据，并将其解码为图像
+    # 注意第二个参数是颜色通道，对于大多数图像，它是3（代表RGB）
+    image_array = cv2.imdecode(np.frombuffer(image_bytes_io.read(), np.uint8), cv2.IMREAD_COLOR)
+    return image_array
+
 
 
 def npimage2bytes(image_array):
