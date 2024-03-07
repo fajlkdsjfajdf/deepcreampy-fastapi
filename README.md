@@ -48,7 +48,7 @@ esrgan模型, 该模型用于在马赛克修复时缩放整张图片, 用以提�
 
 mask-r-cnn模型， Mask R-CNN 是一个实例分割（Instance segmentation）模型, 在这里，我们用其来搜索马赛克区域。
 下载完成后, 将其命名为"weights.h5" 放入 models/mrcnn 文件下
-你可以在 <a href="https://github.com/natethegreate/hent-AI">hent-AI</a> 的 # The Model 中找到对应步长的模型下载地址。
+你可以在 <a href="https://github.com/natethegreate/hent-AI">hent-AI</a> 的 # The Model 中找到对应步长的模型下载地址,最新版本为Model 268。
 
 # 启动
 完成安装后, 你可以直接使用 
