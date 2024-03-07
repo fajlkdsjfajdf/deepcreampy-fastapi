@@ -62,7 +62,7 @@ http://localhost:8001
 中查看所有接口
 
 # GPU
-请更新最新的显卡驱动已经安装对应的cuda 来启用gpu加速。 默认情况下，将使用cpu来完成。 可以使用
+请更新最新的显卡驱动以及安装对应的cuda 来启用gpu加速。 默认情况下，将使用cpu来完成。 可以使用
 ```python copy
 python setting.py
 ```
