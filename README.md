@@ -34,6 +34,7 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 <a href="https://github.com/natethegreate/hent-AI">hent-AI</a>
 
+在# The Model 中找到对应步长的模型下载地址
 下载完成后, 将其命名为"weights.h5" 放入 models/mrcnn 文件下
 
 # 模型说明
