@@ -55,3 +55,8 @@ http://localhost:8001
 ```
 中查看所有接口
 
+# 致谢
+<a target="_blank"  href="https://github.com/cookieY/DeepCreamPy">deepcreampy</a>
+<a target="_blank"  href="https://github.com/natethegreate/hent-AI">hent-AI</a>
+<a target="_blank"  href="https://github.com/nanoskript/deepcreampy-onnx-docker">deepcreampy-onnx-docker</a>
+
