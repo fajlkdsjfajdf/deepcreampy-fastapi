@@ -18,7 +18,6 @@ MASK_COLOR = [0, 1, 0]
 
 def find_mask(colored):
     mask = np.ones(colored.shape, np.uint8)
-    print(mask.shape)
     i, j = np.where(np.all(colored[0] == MASK_COLOR, axis=-1))
     mask[0, i, j] = 0
     return mask
@@ -48,11 +47,14 @@ def decensor(ori: Image, colored: Image, is_mosaic: bool):
         alpha_channel = np.expand_dims(alpha_channel, axis=-1)
         ori = ori.convert('RGB')
 
-    ori_array = image_tool.img2npimage(ori)
+    ori_array = image_to_array(ori)
+    if ori_array.ndim != 3:
+        print("输入图像维度不正确, 可能是一张灰度图")
+        return ori
     if is_mosaic:
         # if mosaic decensor, mask is empty
         colored = colored.convert('RGB')
-        color_array = image_tool.img2npimage(colored)
+        color_array = image_to_array(colored)
         color_array = np.expand_dims(color_array, axis=0)
         mask = find_mask(color_array)
     else:
